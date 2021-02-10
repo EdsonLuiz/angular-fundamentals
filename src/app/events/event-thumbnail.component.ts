@@ -17,8 +17,13 @@ import { Component, Input, OnInit } from '@angular/core';
   </div>
   `,
   styles: [`
+    .thumbnail {min-height: 210px;}
     .pad-left { margin-left: 10px;}
     .well div { color: #bbb; }
+    .hoverwell:hover {
+	    background-color: #657586;
+	    cursor: pointer;
+    }
   `]
 })
 export class EventThumbnailComponent implements OnInit {
