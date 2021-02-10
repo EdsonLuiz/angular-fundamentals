@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   <div class="well hoverwell thumbnail">
     <h2>{{event.name}}</h2>
     <div>Date: {{event.date}}</div>
-    <div  [ngSwitch]="event?.time">
+    <div [ngClass]="applyClass()" [ngSwitch]="event?.time">
       Time: {{event?.time}}
       <span *ngSwitchCase="'8:00 am'">(Early Start)</span>
       <span *ngSwitchCase="'10:00 am'">(Late Start)</span>
@@ -26,6 +26,8 @@ import { Component, Input, OnInit } from '@angular/core';
   </div>
   `,
   styles: [`
+    .green {color: #79ee79 !important; }
+    .bold {font-weight: bold;}
     .thumbnail {min-height: 210px;}
     .pad-left { margin-left: 10px;}
     .well div { color: #bbb; }
@@ -36,6 +38,16 @@ import { Component, Input, OnInit } from '@angular/core';
   `]
 })
 export class EventThumbnailComponent implements OnInit {
+
+  applyClass() {
+    if(this.event && this.event.time === '8:00 am') {
+      // return 'green bold'
+      return ['green', 'bold']
+    }
+
+    // return ''
+    return []
+  }
 
   @Input() event: any;
 
