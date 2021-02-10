@@ -15,7 +15,7 @@ import { Component, OnInit } from '@angular/core';
       </div>
   `,
   styles: [`
-    
+
   `]
 })
 export class EventsListComponent implements OnInit {
@@ -28,11 +28,7 @@ export class EventsListComponent implements OnInit {
       time: '10:00 am',
       price: 599.99,
       imageUrl: '/assets/images/angularconnect-shield.png',
-      location: {
-        address: '1057 DT',
-        city: 'London',
-        country: 'England'
-      },
+      onlineUrl: 'www.someurl.com',
       sessions: [
         {
           id: 1,
